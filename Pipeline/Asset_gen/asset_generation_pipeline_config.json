@@ -1,0 +1,11 @@
+{
+  "prompt_to_image_config": "./prompt_to_image_config.json",
+  "image_to_mask_config": "./image_to_mask_config.json",
+  "image_mask_to_3d_config": "./image_mask_to_3d_config.json",
+  "output_root": "./pipeline_outputs",
+  "image_output_directory": "images",
+  "mask_output_directory": "masks",
+  "asset_output_directory": "assets",
+  "image_seed": 42,
+  "asset_seed": 42
+}

@@ -1,0 +1,26 @@
+{
+  "model_path": "/path/to/models/flux1",
+  "model_variant": "dev",
+  "code_path": null,
+  "cache_path": "/path/to/cache/huggingface",
+  "default_output_directory": "./generated_images",
+  "device": "cuda",
+  "torch_dtype": "bfloat16",
+  "memory_strategy": "direct",
+  "generator_device": "cpu",
+  "enable_vae_slicing": true,
+  "enable_vae_tiling": true,
+  "variant": null,
+  "use_safetensors": true,
+  "seed": 42,
+  "prompt_suffix": "single centered object, fully visible, clean simple background, product photography, sharp focus",
+  "output_format": "png",
+  "show_progress": false,
+  "inference_options": {
+    "height": 1024,
+    "width": 1024,
+    "num_inference_steps": 50,
+    "guidance_scale": 3.5,
+    "max_sequence_length": 512
+  }
+}

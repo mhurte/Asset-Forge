@@ -1,0 +1,6 @@
+{
+  "dinov2": {
+    "url": "https://github.com/facebookresearch/dinov2.git",
+    "commit": "b8931f7bf91576930313be2c6d6af376033b35f0"
+  }
+}

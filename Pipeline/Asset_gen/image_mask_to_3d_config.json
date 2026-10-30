@@ -1,0 +1,13 @@
+{
+  "isolate_process": true,
+  "python_executable": "",
+  "timeout_seconds": 3600,
+  "repository_path": "/path/to/sam-3d-objects",
+  "inference_module_path": "/path/to/sam-3d-objects/notebook/inference.py",
+  "pipeline_config_path": "/path/to/models/sam3d/pipeline.yaml",
+  "compile_model": false,
+  "export_glb": true,
+  "seed": 42,
+  "mask_threshold": 0,
+  "output_suffix": "_sam3d"
+}

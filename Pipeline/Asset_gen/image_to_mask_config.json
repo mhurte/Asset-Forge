@@ -1,0 +1,28 @@
+{
+  "device": "cuda",
+  "sam": {
+    "enabled": true,
+    "isolate_process": true,
+    "python_executable": "",
+    "timeout_seconds": 600,
+    "checkpoint_path": "/path/to/models/sam-vit-huge",
+    "max_area_ratio": 0.9,
+    "mask_combination": "union",
+    "automatic_mask_generator": {
+      "points_per_batch": 64,
+      "pred_iou_thresh": 0.88,
+      "stability_score_thresh": 0.95,
+      "min_mask_region_area": 100
+    }
+  },
+  "sam3": {
+    "enabled": true,
+    "isolate_process": true,
+    "python_executable": "",
+    "timeout_seconds": 1200,
+    "checkpoint_path": "/path/to/models/sam3",
+    "confidence_threshold": 0.5,
+    "mask_threshold": 0.5
+  },
+  "max_attempts": 3
+}

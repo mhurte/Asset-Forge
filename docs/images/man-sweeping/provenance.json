@@ -1,0 +1,470 @@
+{
+  "date": "2026-10-29",
+  "subject": {
+    "label": "MAN_SWEEPING",
+    "mask_backend": "sam3",
+    "mask_prompts": [
+      "man",
+      "broom"
+    ],
+    "prompt": "A single adult man sweeping with a long-handled broom, both hands naturally gripping the handle, broom bristles touching the ground beside his feet. Full-body three-quarter view, entire head, feet and complete broom visible, generous blank margins, centered composition. Plain seamless white background, no room, furniture, floor texture or other objects. Sharp face and hands, realistic anatomy and materials, even studio lighting, everything in focus.",
+    "seed": 314
+  },
+  "status": "passed",
+  "assets": [
+    {
+      "glb_sha256": "70f0a3fc20459825ee749d2f390ba94746528020297a678635c40a5f54d22f75",
+      "id": "flux-sam3d",
+      "image_backend": "flux",
+      "image_sha256": "bffc06c9c126ef266ad733a18bfe0da5b62645adec3098e60cead6dd947ed08f",
+      "mask_backend": "sam3",
+      "mask_sha256": "dde2cca624fcd16fb020c1433976270cca6e46a7d617694cbd2e2e0f97b8dd8d",
+      "mesh_backend": "sam3d",
+      "ply_sha256": "7d696d1eeaa95bfd28fc2c531b698c258a1d58612a4a50c26cda3921bb7790fb",
+      "status": "passed"
+    },
+    {
+      "glb_sha256": "ffd8c24adbb37580f9ba31103af5e5d25146b2782d68e5452f32025138fba5e0",
+      "id": "flux-trellis2",
+      "image_backend": "flux",
+      "image_sha256": "bffc06c9c126ef266ad733a18bfe0da5b62645adec3098e60cead6dd947ed08f",
+      "mask_backend": "sam3",
+      "mask_sha256": "dde2cca624fcd16fb020c1433976270cca6e46a7d617694cbd2e2e0f97b8dd8d",
+      "mesh_backend": "trellis2",
+      "status": "passed"
+    },
+    {
+      "glb_sha256": "1cb446aa76c9664e8cd2e9d3e4636f8e585b40bae06c3343942b0b39b8e5729f",
+      "id": "flux2-sam3d",
+      "image_backend": "flux2",
+      "image_sha256": "badcb538709cace08b9748c1c3fb491d1112bd272084e8576331b839485ae932",
+      "mask_backend": "sam3",
+      "mask_sha256": "eaea4bf706639da2fd18f9ccd8f464b82f9ec7834dac1776afed4d25a907ce83",
+      "mesh_backend": "sam3d",
+      "ply_sha256": "208e0fd428342ddacbdebdffd80ace992ea3a3dc42b2510d57cc163a4e71dbd0",
+      "status": "passed"
+    },
+    {
+      "glb_sha256": "4aba6175839fb36b4c09335fe15a5f24794eb6e0c8539980aff56cc0c6c50e0a",
+      "id": "flux2-trellis2",
+      "image_backend": "flux2",
+      "image_sha256": "badcb538709cace08b9748c1c3fb491d1112bd272084e8576331b839485ae932",
+      "mask_backend": "sam3",
+      "mask_sha256": "eaea4bf706639da2fd18f9ccd8f464b82f9ec7834dac1776afed4d25a907ce83",
+      "mesh_backend": "trellis2",
+      "status": "passed"
+    }
+  ],
+  "flux1_inference_options": {
+    "guidance_scale": 3.5,
+    "height": 1024,
+    "max_sequence_length": 512,
+    "num_inference_steps": 50,
+    "width": 1024
+  },
+  "flux2_placement": {
+    "strategy": "balanced",
+    "device_map": {
+      "transformer": 0,
+      "text_encoder": 1,
+      "vae": 1
+    },
+    "precision": "bfloat16"
+  },
+  "optional_model_revisions": {
+    "black-forest-labs/FLUX.2-dev": "26afe3a78bb242c0a8bb181dcc8937bb16e5c66c",
+    "facebook/dinov3-vitl16-pretrain-lvd1689m": "ea8dc2863c51be0a264bab82070e3e8836b02d51",
+    "microsoft/TRELLIS-image-large": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+    "microsoft/TRELLIS.2-4B": "af44b45f2e35a493886929c6d786e563ec68364d"
+  },
+  "optional_source_revisions": {
+    "cumesh": "12289e1062f0603f2f0d0771b02e1395d247f26f",
+    "diffusers": "aae97e79e8e6a55e0b43114f9c8916c06d4bca8c",
+    "flexgemm": "6dd94a859c26ee8246888502eada3dd8ad85532e",
+    "nvdiffrast": "253ac4fcea7de5f396371124af597e6cc957bfae",
+    "trellis2": "75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+    "utils3d": "9a4eb15e4021b67b12c460c7057d642626897ec8"
+  },
+  "adapter_sha256": {
+    "Pipeline/Asset_gen/asset_generation_pipeline.py": "a2827b122e1e645ac9a9a6953ad255a68fcd2936debf6b0e1bc2560cb268f89d",
+    "Pipeline/Asset_gen/experimental_backends.py": "b44f8bef25a7bf3560ebdd916629bed0d1572290af845bebdd5e6e60e577ea59",
+    "Pipeline/Asset_gen/image_mask_to_3d.py": "6adc9aa8aec3852520c3afcbc4973168f82d67c25d5059714c98e502b26fd5ee",
+    "Pipeline/Asset_gen/image_to_mask.py": "6257f86877d9658309d7e7ff80f7ebe70f43554b5516cce1af8fa8cb652713fc",
+    "Pipeline/Asset_gen/prompt_to_image.py": "37160db20f38d3660a07c55535267c39cc84e1422dfde6fa7500d37eba4aebd4",
+    "Pipeline/Asset_gen/test_dual_exports.py": "1079af0cabfdcbe3936e5f218af86e9c166151a0b0edf37853702e87353754b2",
+    "Pipeline/Asset_gen/test_experimental_backends.py": "2884c11bd4a41164b0f4d9d395936b0b079cb11767641a6bfd0764dff1830d05"
+  },
+  "render_settings": {
+    "flux-sam3d": {
+      "label": "MAN_SWEEPING",
+      "longest_dimension_metres": 1.0,
+      "scale_source": "manual display prior",
+      "views": {
+        "side": {
+          "camera_location": [
+            1.777024507522583,
+            -2.8432393074035645,
+            1.5741324424743652
+          ],
+          "target": [
+            3.725290298461914e-09,
+            0.0,
+            0.4190666079521179
+          ],
+          "framing": "whole asset"
+        },
+        "high": {
+          "camera_location": [
+            0.9116998910903931,
+            -1.1220922470092773,
+            3.925604820251465
+          ],
+          "target": [
+            3.725290298461914e-09,
+            0.0,
+            0.4190666079521179
+          ],
+          "framing": "whole asset"
+        },
+        "reverse": {
+          "camera_location": [
+            -1.7779465913772583,
+            2.844714641571045,
+            1.8414239883422852
+          ],
+          "target": [
+            3.725290298461914e-09,
+            0.0,
+            0.4190666079521179
+          ],
+          "framing": "whole asset"
+        }
+      },
+      "setups": {
+        "studio-agx": {
+          "view_transform": "AgX",
+          "unlit_asset": false
+        }
+      }
+    },
+    "flux-trellis2": {
+      "label": "MAN_SWEEPING",
+      "longest_dimension_metres": 1.0,
+      "scale_source": "manual display prior",
+      "views": {
+        "side": {
+          "camera_location": [
+            1.962426781654358,
+            -3.139883041381836,
+            1.775577425956726
+          ],
+          "target": [
+            -7.450580596923828e-09,
+            0.0,
+            0.5
+          ],
+          "framing": "whole asset"
+        },
+        "high": {
+          "camera_location": [
+            0.9795848727226257,
+            -1.2056430578231812,
+            4.267634391784668
+          ],
+          "target": [
+            -7.450580596923828e-09,
+            0.0,
+            0.5
+          ],
+          "framing": "whole asset"
+        },
+        "reverse": {
+          "camera_location": [
+            -1.9490983486175537,
+            3.1185574531555176,
+            2.059278726577759
+          ],
+          "target": [
+            -7.450580596923828e-09,
+            0.0,
+            0.5
+          ],
+          "framing": "whole asset"
+        }
+      },
+      "setups": {
+        "studio-agx": {
+          "view_transform": "AgX",
+          "unlit_asset": false
+        }
+      }
+    },
+    "flux2-sam3d": {
+      "label": "MAN_SWEEPING",
+      "longest_dimension_metres": 1.0,
+      "scale_source": "manual display prior",
+      "views": {
+        "side": {
+          "camera_location": [
+            1.7178350687026978,
+            -2.7485361099243164,
+            1.6165927648544312
+          ],
+          "target": [
+            -1.1175870895385742e-08,
+            0.0,
+            0.5
+          ],
+          "framing": "whole asset"
+        },
+        "high": {
+          "camera_location": [
+            0.7675378322601318,
+            -0.9446620941162109,
+            3.45206880569458
+          ],
+          "target": [
+            -1.1175870895385742e-08,
+            0.0,
+            0.5
+          ],
+          "framing": "whole asset"
+        },
+        "reverse": {
+          "camera_location": [
+            -1.6821411848068237,
+            2.6914260387420654,
+            1.8457130193710327
+          ],
+          "target": [
+            -1.1175870895385742e-08,
+            0.0,
+            0.5
+          ],
+          "framing": "whole asset"
+        }
+      },
+      "setups": {
+        "studio-agx": {
+          "view_transform": "AgX",
+          "unlit_asset": false
+        }
+      }
+    },
+    "flux2-trellis2": {
+      "label": "MAN_SWEEPING",
+      "longest_dimension_metres": 1.0,
+      "scale_source": "manual display prior",
+      "views": {
+        "side": {
+          "camera_location": [
+            1.7708734273910522,
+            -2.833397626876831,
+            1.6510677337646484
+          ],
+          "target": [
+            -3.725290298461914e-09,
+            -1.4901161193847656e-08,
+            0.5
+          ],
+          "framing": "whole asset"
+        },
+        "high": {
+          "camera_location": [
+            0.8161979913711548,
+            -1.0045515298843384,
+            3.639223098754883
+          ],
+          "target": [
+            -3.725290298461914e-09,
+            -1.4901161193847656e-08,
+            0.5
+          ],
+          "framing": "whole asset"
+        },
+        "reverse": {
+          "camera_location": [
+            -1.7400290966033936,
+            2.7840466499328613,
+            1.8920233249664307
+          ],
+          "target": [
+            -3.725290298461914e-09,
+            -1.4901161193847656e-08,
+            0.5
+          ],
+          "framing": "whole asset"
+        }
+      },
+      "setups": {
+        "studio-agx": {
+          "view_transform": "AgX",
+          "unlit_asset": false
+        }
+      }
+    }
+  },
+  "media": [
+    {
+      "file": "flux-source.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "original_png_sha256": "bffc06c9c126ef266ad733a18bfe0da5b62645adec3098e60cead6dd947ed08f",
+      "published_png_sha256": "bffc06c9c126ef266ad733a18bfe0da5b62645adec3098e60cead6dd947ed08f",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-mask.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "original_png_sha256": "dde2cca624fcd16fb020c1433976270cca6e46a7d617694cbd2e2e0f97b8dd8d",
+      "published_png_sha256": "dde2cca624fcd16fb020c1433976270cca6e46a7d617694cbd2e2e0f97b8dd8d",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-source.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "original_png_sha256": "badcb538709cace08b9748c1c3fb491d1112bd272084e8576331b839485ae932",
+      "published_png_sha256": "badcb538709cace08b9748c1c3fb491d1112bd272084e8576331b839485ae932",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-mask.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "original_png_sha256": "eaea4bf706639da2fd18f9ccd8f464b82f9ec7834dac1776afed4d25a907ce83",
+      "published_png_sha256": "eaea4bf706639da2fd18f9ccd8f464b82f9ec7834dac1776afed4d25a907ce83",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-sam3d-side.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "06e76ae8cfc526013081e1152ebe4b75a6b3804ba71ff65e901ff77b162fbc85",
+      "published_png_sha256": "100b293490254053f20d7b6244f6132e77ef2bccd7a3fc9ef0320520e0779fc7",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-sam3d-high.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "262eed00f3e3146cf2ee5d606933216aafcfbb03c4ea3ebceaa2db4010634b5e",
+      "published_png_sha256": "f31a796161af27b908614f4b36b6a2e5e36cb855cbf662f02a0d3b8e80cacab9",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-sam3d-reverse.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "125addcfc13b6db76bceeb6b84994cd69a0fee480bd1e4ba3041f60698c4da65",
+      "published_png_sha256": "e4db121a11499756195db90bd06dd2e21b034fefb648a43f8293feecb583ffdb",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-trellis2-side.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "5b98ddbfea9aad034af1bc94041a47fd65f110db32eb279566ba09b003492080",
+      "published_png_sha256": "7dc3952b0e3e55d4681ed77859f6e8acdb54725ba3946b36846f91db9b55c2b9",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-trellis2-high.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "feb0dedb39caa0c4d0c00ff89c68772ad1e9037fd5287dbe31788764f8fac8b2",
+      "published_png_sha256": "2c62d3bf6570fde1efe32fedd8ae216d9eeb709ae3b85d5873b90914db1ddb46",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux-trellis2-reverse.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "0c509e7be90836c004032aae36003dd08aced4c386ab768e34186ee9afd5c531",
+      "published_png_sha256": "de5248ffc85ecb439288c629124f3d520b540a48ace546cb0f9c84d19b392911",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-sam3d-side.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "6f42ad971e36ba0c50eb8b3a0c9c209469dfbca12ba97b05b067a44c951f300d",
+      "published_png_sha256": "5b6fd8c25bcd1d175eee01fdf855796825e90d65ef8738cb877e28c836d0e366",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-sam3d-high.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "7e85fb4b8c7ad796d6b30857360423c6d0a95a8da63d175c7bbe979fbb2a4da9",
+      "published_png_sha256": "5af0fd4dfe8658421929408b1b7511dfcaba7493d2ece6213e762a58d067d2f3",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-sam3d-reverse.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "220f75628d6b1d2431e1c30a8f0ddb6b4a079be741116f9e757023f6dd59d87a",
+      "published_png_sha256": "a8ac573916f4f5d91a175233d535327670beb122bb243f35fda7019ee5eadf09",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-trellis2-side.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "57ae778317f60a5e58bfde7b78e239a7030889d07d45f710468d8851e77eaddc",
+      "published_png_sha256": "75261024d75a9c5fe6144e27beda6f35fc196b807c4e698093a877d294893d12",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-trellis2-high.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "49a0d2e7fed526da0cc17aea86aa75e1cad83fa72737b2aa629a86f38144d99e",
+      "published_png_sha256": "388a497768559081dfdc72f996c66879b55f3f7f47af8d6655d131a7a60cd1c2",
+      "pixels_unchanged": true
+    },
+    {
+      "file": "flux2-trellis2-reverse.png",
+      "dimensions": [
+        768,
+        768
+      ],
+      "original_png_sha256": "1c174e972d2e21087602f482381f4ee290ddaa68df17ce7b71585cb896205318",
+      "published_png_sha256": "f50332c7a76349b1bb73c172ae569be3a65b0847cdcaeedf40445efaa5449f68",
+      "pixels_unchanged": true
+    }
+  ],
+  "provenance_limits": "The report did not record immutable default FLUX.1/SAM3/SAM3D model revisions. Adapter hashes and available optional revisions are preserved."
+}
