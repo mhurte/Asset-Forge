@@ -1,8 +1,7 @@
 # Asset-Forge
 
 Generate reusable 3D assets from a prompt or an existing image through selectable
-image, segmentation and reconstruction backends. A standalone research tool:
-no scene generator or dataset project is required.
+image, segmentation and reconstruction backends.
 
 | Generated source image · FLUX.2-dev | Reconstructed asset · SAM3 + TRELLIS.2, rendered in Blender |
 | --- | --- |
